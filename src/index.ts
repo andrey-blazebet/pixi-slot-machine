@@ -4,11 +4,11 @@
  */
 
 import * as PIXI from 'pixi.js';
-import { config } from './config';
-import PlayButton from './components/PlayButton';
-import SelectPlayMode from './components/SelectPlayMode';
-import Reels from './components/Reels';
 import FPSDisplay from './components/FPSDisplay';
+import PlayButton from './components/PlayButton';
+import Reels from './components/Reels';
+import SelectPlayMode from './components/SelectPlayMode';
+import { config } from './config';
 
 import './style.css';
 
@@ -19,14 +19,6 @@ function createApplication(): PIXI.Application {
     backgroundColor: 0xd3d3d3,
     width: gameWidth,
     height: gameHeight
-  });
-  app.renderer.resize(window.innerWidth, window.innerHeight);
-  app.stage.scale.x = window.innerWidth / gameWidth;
-  app.stage.scale.y = window.innerHeight / gameHeight;
-  window.addEventListener('resize', () => {
-    app.renderer.resize(window.innerWidth, window.innerHeight);
-    app.stage.scale.x = window.innerWidth / gameWidth;
-    app.stage.scale.y = window.innerHeight / gameHeight;
   });
   return app;
 }
